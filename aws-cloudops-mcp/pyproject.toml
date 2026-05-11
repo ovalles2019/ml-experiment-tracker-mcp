@@ -1,0 +1,27 @@
+[project]
+name = "aws-cloudops-mcp"
+version = "0.1.0"
+description = "MCP server exposing read-focused AWS Cloud Operations helpers via boto3."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Oscar Valles" }]
+keywords = ["mcp", "aws", "cloudops", "boto3", "model-context-protocol"]
+dependencies = [
+    "mcp>=1.6.0",
+    "boto3>=1.34.0",
+]
+
+[project.scripts]
+aws-cloudops-mcp = "aws_cloudops_mcp.server:main"
+
+[project.optional-dependencies]
+dev = ["ruff>=0.8.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
